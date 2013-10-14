@@ -1,0 +1,11 @@
+<div data-hook="admin_homepage_product_form_fields" class="align-center row">
+
+  <div class="alpha sixteen omega columns">
+    <%= f.field_container :product do %>
+      <%= f.label :product, Spree.t(:product) %> <span class="required">*</span><br />
+      <%= f.select :product_id, Spree::Product.all.collect {|p| [ p.name, p.id ] }, { include_blank: false }, :class => "fullwidth" %>
+      <%= f.error_message_on :name %>
+    <% end %>
+  </div>
+
+</div>
